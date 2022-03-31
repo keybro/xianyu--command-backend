@@ -27,6 +27,11 @@ public class UserController extends BaseController{
     @Autowired
     UserService userService;
 
+    @PostMapping("/test")
+    public String test(){
+        return "部署成功!";
+    }
+
 
     /**
      * @Author LuoRuiJie

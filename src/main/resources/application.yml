@@ -8,35 +8,35 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     #    url: jdbc:mysql://localhost:3306/inventory_manage?useUnicode=true&useSSL=false&characterEncoding=utf8
     #    url: jdbc:mysql://47.99.186.220:3306/inventory_manage?useUnicode=true&useSSL=false&characterEncoding=utf8
-    url: jdbc:mysql://localhost:3306/recommend?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://47.99.186.220:3306/recommend?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: ${MYSQL_USER:root}
-    password: ${MYSQL_PWD:123456}
+    password: ${MYSQL_PWD:center135}
 
 
 #mybatis
 mybatis-plus:
   mapper-locations: mapper/*Mapper.xml
-  #ÊµÌåÉ¨Ãè£¬¶à¸öpackageÓÃ¶ººÅ»òÕß·ÖºÅ·Ö¸ô
+  #
   type-aliases-package: com.sys.recommend.entity
     #global-config:
-    #Ö÷¼üÀàĞÍ  0:"Êı¾İ¿âID×ÔÔö", 1:"ÓÃ»§ÊäÈëID",2:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", 3:"È«¾ÖÎ¨Ò»ID UUID";
+    #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  0:"ï¿½ï¿½ï¿½İ¿ï¿½IDï¿½ï¿½ï¿½ï¿½", 1:"ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ID",2:"È«ï¿½ï¿½Î¨Ò»ID (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¨Ò»ID)", 3:"È«ï¿½ï¿½Î¨Ò»ID UUID";
     #id-type: 0
-    #×Ö¶Î²ßÂÔ 0:"ºöÂÔÅĞ¶Ï",1:"·Ç NULL ÅĞ¶Ï"),2:"·Ç¿ÕÅĞ¶Ï"
+    #ï¿½Ö¶Î²ï¿½ï¿½ï¿½ 0:"ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½",1:"ï¿½ï¿½ NULL ï¿½Ğ¶ï¿½"),2:"ï¿½Ç¿ï¿½ï¿½Ğ¶ï¿½"
     #field-strategy: 2
-    #ÍÕ·åÏÂ»®Ïß×ª»»
+    #ï¿½Õ·ï¿½ï¿½Â»ï¿½ï¿½ï¿½×ªï¿½ï¿½
     #db-column-underline: true
-    #Ë¢ĞÂmapper µ÷ÊÔÉñÆ÷
+    #Ë¢ï¿½ï¿½mapper ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     #refresh-mapper: true
-    #Êı¾İ¿â´óĞ´ÏÂ»®Ïß×ª»»
+    #ï¿½ï¿½ï¿½İ¿ï¿½ï¿½Ğ´ï¿½Â»ï¿½ï¿½ï¿½×ªï¿½ï¿½
     #capital-mode: true
-    #ĞòÁĞ½Ó¿ÚÊµÏÖÀàÅäÖÃ
+    #ï¿½ï¿½ï¿½Ğ½Ó¿ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     #key-generator: com.baomidou.springboot.xxx
-    #Âß¼­É¾³ıÅäÖÃ
+    #ï¿½ß¼ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     #logic-delete-value: -1
     #logic-not-delete-value: 0
-  #×Ô¶¨ÒåÌî³ä²ßÂÔ½Ó¿ÚÊµÏÖ
+  #ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ó¿ï¿½Êµï¿½ï¿½
   #meta-object-handler: com.baomidou.springboot.xxx
-  #×Ô¶¨ÒåSQL×¢ÈëÆ÷
+  #ï¿½Ô¶ï¿½ï¿½ï¿½SQL×¢ï¿½ï¿½ï¿½ï¿½
   #sql-injector: com.baomidou.mybatisplus.dao.LogicSqlInjector
   configuration:
     map-underscore-to-camel-case: true
