@@ -1,6 +1,6 @@
 package com.sys.recommend.service;
 
-import com.sys.recommend.entity.Resource;
+import com.sys.recommend.entity.Book;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author LuoRuiJie
- * @since 2022-03-30
+ * @since 2022-04-06
  */
-public interface ResourceService extends IService<Resource> {
+public interface BookService extends IService<Book> {
 
 }

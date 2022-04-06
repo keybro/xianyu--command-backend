@@ -111,7 +111,7 @@ public class CodeGeneration {
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
         // 4.数据库中的表名
-        strategy.setInclude("group","invitation","invitation_reply","join","label","resource","resource_comment","user");
+        strategy.setInclude("book","music","movie");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

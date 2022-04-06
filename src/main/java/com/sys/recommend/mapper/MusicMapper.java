@@ -1,6 +1,6 @@
 package com.sys.recommend.mapper;
 
-import com.sys.recommend.entity.Resource;
+import com.sys.recommend.entity.Music;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author LuoRuiJie
- * @since 2022-03-30
+ * @since 2022-04-06
  */
-public interface ResourceMapper extends BaseMapper<Resource> {
+public interface MusicMapper extends BaseMapper<Music> {
 
 }

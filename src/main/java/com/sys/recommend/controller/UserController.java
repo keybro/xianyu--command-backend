@@ -35,7 +35,7 @@ public class UserController extends BaseController{
 
     /**
      * @Author LuoRuiJie
-     * @Description //TODO 用户注册
+     * @Description 用户注册
      * @Date
      * @Param User
      * @return Resp
@@ -56,7 +56,7 @@ public class UserController extends BaseController{
 
     /**
      * @Author LuoRuiJie
-     * @Description //TODO 用户登录
+     * @Description 用户登录
      * @Date
      * @Param User
      * @return Resp
