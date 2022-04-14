@@ -1,6 +1,6 @@
 package com.sys.recommend.mapper;
 
-import com.sys.recommend.entity.Join;
+import com.sys.recommend.entity.Joins;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author LuoRuiJie
  * @since 2022-03-30
  */
-public interface JoinMapper extends BaseMapper<Join> {
+public interface JoinMapper extends BaseMapper<Joins> {
 
 }

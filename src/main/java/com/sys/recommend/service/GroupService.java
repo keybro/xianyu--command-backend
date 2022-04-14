@@ -1,6 +1,6 @@
 package com.sys.recommend.service;
 
-import com.sys.recommend.entity.Group;
+import com.sys.recommend.entity.Groupinfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author LuoRuiJie
  * @since 2022-03-30
  */
-public interface GroupService extends IService<Group> {
+public interface GroupService extends IService<Groupinfo> {
 
 }

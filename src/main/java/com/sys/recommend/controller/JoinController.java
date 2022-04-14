@@ -1,9 +1,11 @@
 package com.sys.recommend.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import com.sys.recommend.entity.Joins;
+import com.sys.recommend.service.JoinService;
+import com.sys.recommend.tool.Resp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -15,6 +17,29 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/join")
-public class JoinController {
+public class JoinController extends BaseController{
+
+    @Autowired
+    private JoinService joinService;
+
+
+    /**
+     * @Author LuoRuiJie
+     * @Description 创建加入小组的申请
+     * @Date
+     * @Param Join
+     * @return Resp
+     **/
+    @PostMapping("/createJoinApplication/{id}")
+    public Resp createJoinApplication(@PathVariable int id){
+        int CurrentUserId = Integer.parseInt(getSenderId());
+        Joins joins = new Joins();
+        joins.setUserId(CurrentUserId);
+        joins.setGroupId(id);
+        if (joinService.save(joins)){
+            return Resp.ok("加入小组成功");
+        }
+        return Resp.err("加入小组失败");
+    }
 
 }

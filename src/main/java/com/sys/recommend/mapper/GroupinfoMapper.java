@@ -1,6 +1,6 @@
 package com.sys.recommend.mapper;
 
-import com.sys.recommend.entity.Group;
+import com.sys.recommend.entity.Groupinfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author LuoRuiJie
  * @since 2022-03-30
  */
-public interface GroupMapper extends BaseMapper<Group> {
+public interface GroupinfoMapper extends BaseMapper<Groupinfo> {
 
 }

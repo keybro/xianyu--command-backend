@@ -1,7 +1,7 @@
 package com.sys.recommend.service.impl;
 
-import com.sys.recommend.entity.Group;
-import com.sys.recommend.mapper.GroupMapper;
+import com.sys.recommend.entity.Groupinfo;
+import com.sys.recommend.mapper.GroupinfoMapper;
 import com.sys.recommend.service.GroupService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-03-30
  */
 @Service
-public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements GroupService {
+public class GroupServiceImpl extends ServiceImpl<GroupinfoMapper, Groupinfo> implements GroupService {
 
 }

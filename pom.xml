@@ -87,6 +87,14 @@
             <version>2.3.30</version>
         </dependency>
 
+        <!--  用于文件分布式存储      -->
+        <!-- https://mvnrepository.com/artifact/io.minio/minio -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.2.1</version>
+        </dependency>
+
 
 
     </dependencies>

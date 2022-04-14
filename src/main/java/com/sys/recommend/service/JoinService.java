@@ -1,6 +1,6 @@
 package com.sys.recommend.service;
 
-import com.sys.recommend.entity.Join;
+import com.sys.recommend.entity.Joins;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author LuoRuiJie
  * @since 2022-03-30
  */
-public interface JoinService extends IService<Join> {
+public interface JoinService extends IService<Joins> {
 
 }

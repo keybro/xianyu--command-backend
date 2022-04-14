@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author LuoRuiJie
  * @since 2022-03-30
  */
-public class Group implements Serializable {
+public class Groupinfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,11 +23,31 @@ public class Group implements Serializable {
 
     private String groupIntroduction;
 
-    private String labelId;
+    private String label;
 
     private Integer createrId;
 
     private Integer state;
+
+    private String groupHead;
+
+    private String headImgName;
+
+    public String getGroupHead() {
+        return groupHead;
+    }
+
+    public void setGroupHead(String groupHead) {
+        this.groupHead = groupHead;
+    }
+
+    public String getHeadImgName() {
+        return headImgName;
+    }
+
+    public void setHeadImgName(String headImgName) {
+        this.headImgName = headImgName;
+    }
 
     public Integer getGroupId() {
         return groupId;
@@ -50,12 +70,12 @@ public class Group implements Serializable {
     public void setGroupIntroduction(String groupIntroduction) {
         this.groupIntroduction = groupIntroduction;
     }
-    public String getLabelId() {
-        return labelId;
+    public String getLabel() {
+        return label;
     }
 
-    public void setLabelId(String labelId) {
-        this.labelId = labelId;
+    public void setLabel(String labelId) {
+        this.label = labelId;
     }
     public Integer getCreaterId() {
         return createrId;
@@ -78,9 +98,11 @@ public class Group implements Serializable {
             "groupId=" + groupId +
             ", groupName=" + groupName +
             ", groupIntroduction=" + groupIntroduction +
-            ", labelId=" + labelId +
+            ", label=" + label +
             ", createrId=" + createrId +
             ", state=" + state +
+            ", groupHead=" + groupHead +
+            ", headImgName=" + headImgName +
         "}";
     }
 }

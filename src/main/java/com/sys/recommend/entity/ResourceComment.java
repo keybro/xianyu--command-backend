@@ -22,15 +22,25 @@ public class ResourceComment implements Serializable {
 
     private Integer commentBelongId;
 
-    private LocalDateTime publicTime;
+    private String publicTime;
 
     private Integer publicUserId;
 
     private Integer score;
 
-    private Integer like;
+    private Integer proveNumber;
 
     private String commentContent;
+
+    private Integer belongType;
+
+    public Integer getBelongType() {
+        return belongType;
+    }
+
+    public void setBelongType(Integer belongType) {
+        this.belongType = belongType;
+    }
 
     public Integer getResourceCommentId() {
         return resourceCommentId;
@@ -46,11 +56,11 @@ public class ResourceComment implements Serializable {
     public void setCommentBelongId(Integer commentBelongId) {
         this.commentBelongId = commentBelongId;
     }
-    public LocalDateTime getPublicTime() {
+    public String getPublicTime() {
         return publicTime;
     }
 
-    public void setPublicTime(LocalDateTime publicTime) {
+    public void setPublicTime(String publicTime) {
         this.publicTime = publicTime;
     }
     public Integer getPublicUserId() {
@@ -67,12 +77,12 @@ public class ResourceComment implements Serializable {
     public void setScore(Integer score) {
         this.score = score;
     }
-    public Integer getLike() {
-        return like;
+    public Integer getProveNumber() {
+        return proveNumber;
     }
 
-    public void setLike(Integer like) {
-        this.like = like;
+    public void setProveNumber(Integer like) {
+        this.proveNumber = like;
     }
     public String getCommentContent() {
         return commentContent;
@@ -90,8 +100,9 @@ public class ResourceComment implements Serializable {
             ", publicTime=" + publicTime +
             ", publicUserId=" + publicUserId +
             ", score=" + score +
-            ", like=" + like +
+            ", proveNumber=" + proveNumber +
             ", commentContent=" + commentContent +
+            ", belongType=" + belongType +
         "}";
     }
 }

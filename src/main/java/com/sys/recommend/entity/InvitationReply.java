@@ -26,7 +26,17 @@ public class InvitationReply implements Serializable {
 
     private Integer createrId;
 
-    private LocalDateTime replyTime;
+    private String replyTime;
+
+    private String createrName;
+
+    public String getCreaterName() {
+        return createrName;
+    }
+
+    public void setCreaterName(String createrName) {
+        this.createrName = createrName;
+    }
 
     public Integer getInvitationReplyId() {
         return invitationReplyId;
@@ -56,11 +66,11 @@ public class InvitationReply implements Serializable {
     public void setCreaterId(Integer createrId) {
         this.createrId = createrId;
     }
-    public LocalDateTime getReplyTime() {
+    public String getReplyTime() {
         return replyTime;
     }
 
-    public void setReplyTime(LocalDateTime replyTime) {
+    public void setReplyTime(String replyTime) {
         this.replyTime = replyTime;
     }
 
@@ -72,6 +82,7 @@ public class InvitationReply implements Serializable {
             ", invitationReplyContent=" + invitationReplyContent +
             ", createrId=" + createrId +
             ", replyTime=" + replyTime +
+            ", createrName=" + createrName +
         "}";
     }
 }

@@ -1,5 +1,8 @@
 package com.sys.recommend.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -14,6 +17,7 @@ public class Movie implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "movie_id", type = IdType.AUTO)
     private Integer movieId;
 
     private String movieName;

@@ -26,7 +26,17 @@ public class Invitation implements Serializable {
 
     private Integer createrId;
 
-    private LocalDateTime createTime;
+    private String createTime;
+
+        private String invitationTitle;
+
+    public String getInvitationTitle() {
+        return invitationTitle;
+    }
+
+    public void setInvitationTitle(String invitationTitle) {
+        this.invitationTitle = invitationTitle;
+    }
 
     public Integer getInvitationId() {
         return invitationId;
@@ -56,11 +66,11 @@ public class Invitation implements Serializable {
     public void setCreaterId(Integer createrId) {
         this.createrId = createrId;
     }
-    public LocalDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -72,6 +82,7 @@ public class Invitation implements Serializable {
             ", invitationContent=" + invitationContent +
             ", createrId=" + createrId +
             ", createTime=" + createTime +
+            ", invitationTitle=" + invitationTitle +
         "}";
     }
 }

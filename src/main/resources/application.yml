@@ -43,6 +43,15 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
 
+# minio 连接参数
+minio:
+  endpoint: 47.99.186.220
+  port: 9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: recommend
+  secure: false
+
 
 dcs:
   jwtKey: 66a874772c8965474a8332e3628bc473
