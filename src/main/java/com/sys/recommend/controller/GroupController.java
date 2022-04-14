@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sys.recommend.entity.Groupinfo;
 import com.sys.recommend.entity.Movie;
+import com.sys.recommend.entity.Music;
 import com.sys.recommend.service.GroupService;
 import com.sys.recommend.service.MinioService;
 import com.sys.recommend.tool.Resp;
@@ -149,5 +150,19 @@ public class GroupController extends BaseController{
 
 
 
-
+    /**
+     * @Author LuoRuiJie
+     * @Description 搜索用，当搜索作品类型选择为音乐的时候调用
+     * @Date
+     * @Param Map
+     * @return Resp
+     **/
+    @GetMapping("/getSearchGroup")
+    public Resp getSearchGroup(@RequestParam Map<String,String> params){
+        int limit = Integer.parseInt(params.get("limit"));
+        int page = Integer.parseInt(params.get("currentPage"));
+        String keyword = params.get("keyword");
+        QueryWrapper<Groupinfo> groupQueryWrapper = new QueryWrapper<Groupinfo>().like("group_name", keyword);
+        return Resp.ok(groupService.page(new Page<>(page,limit),groupQueryWrapper));
+    }
 }

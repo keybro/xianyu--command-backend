@@ -3,6 +3,7 @@ package com.sys.recommend.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.sys.recommend.entity.Book;
 import com.sys.recommend.entity.Movie;
 import com.sys.recommend.entity.Music;
 import com.sys.recommend.service.MusicService;
@@ -100,6 +101,24 @@ public class MusicController {
         QueryWrapper<Music> musicQueryWrapper = new QueryWrapper<Music>().like("music_type", bookType).orderByDesc("publish_time");
         Page<Music> musicPage = musicService.page(new Page<>(page, limit), musicQueryWrapper);
         return Resp.ok(musicPage);
+    }
+
+
+
+    /**
+     * @Author LuoRuiJie
+     * @Description 搜索用，当搜索作品类型选择为音乐的时候调用
+     * @Date
+     * @Param Map
+     * @return Resp
+     **/
+    @GetMapping("/getSearchMusic")
+    public Resp getSearchMusic(@RequestParam Map<String,String> params){
+        int limit = Integer.parseInt(params.get("limit"));
+        int page = Integer.parseInt(params.get("currentPage"));
+        String keyword = params.get("keyword");
+        QueryWrapper<Music> musicQueryWrapper = new QueryWrapper<Music>().like("music_name", keyword).orderByDesc("publish_time");
+        return Resp.ok(musicService.page(new Page<>(page,limit),musicQueryWrapper));
     }
 
 }

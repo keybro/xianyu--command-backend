@@ -107,4 +107,61 @@ public class MovieController {
     }
 
 
+    /**
+     * @Author LuoRuiJie
+     * @Description 搜索用，当搜索作品类型选择为电影的时候调用
+     * @Date
+     * @Param Map
+     * @return Resp
+     **/
+    @GetMapping("/getSearchMovie")
+    public Resp getSearchMovie(@RequestParam Map<String,String> params){
+        int limit = Integer.parseInt(params.get("limit"));
+        int page = Integer.parseInt(params.get("currentPage"));
+        String keyword = params.get("keyword");
+        QueryWrapper<Movie> movieQueryWrapper = new QueryWrapper<Movie>().like("movie_name", keyword).orderByDesc("show_time");
+        return Resp.ok(movieService.page(new Page<>(page,limit),movieQueryWrapper));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

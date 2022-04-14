@@ -4,6 +4,7 @@ package com.sys.recommend.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sys.recommend.entity.Book;
+import com.sys.recommend.entity.Movie;
 import com.sys.recommend.service.BookService;
 import com.sys.recommend.tool.Resp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,6 +99,23 @@ public class BookController extends BaseController{
         QueryWrapper<Book> bookQueryWrapper = new QueryWrapper<Book>().like("book_type", bookType).orderByDesc("publish_time");
         Page<Book> bookPage = bookService.page(new Page<>(page, limit), bookQueryWrapper);
         return Resp.ok(bookPage);
+    }
+
+
+    /**
+     * @Author LuoRuiJie
+     * @Description 搜索用，当搜索作品类型选择为电影的时候调用
+     * @Date
+     * @Param Map
+     * @return Resp
+     **/
+    @GetMapping("/getSearchBook")
+    public Resp getSearchBook(@RequestParam Map<String,String> params){
+        int limit = Integer.parseInt(params.get("limit"));
+        int page = Integer.parseInt(params.get("currentPage"));
+        String keyword = params.get("keyword");
+        QueryWrapper<Book> bookQueryWrapper = new QueryWrapper<Book>().like("book_name", keyword).orderByDesc("publish_time");
+        return Resp.ok(bookService.page(new Page<>(page,limit),bookQueryWrapper));
     }
 
 }
