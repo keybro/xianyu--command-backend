@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author LuoRuiJie
@@ -62,6 +62,7 @@ public class Book implements Serializable {
     public void setBookId(Integer bookId) {
         this.bookId = bookId;
     }
+
     public String getBookName() {
         return bookName;
     }
@@ -69,6 +70,7 @@ public class Book implements Serializable {
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
+
     public String getBookType() {
         return bookType;
     }
@@ -76,6 +78,7 @@ public class Book implements Serializable {
     public void setBookType(String bookType) {
         this.bookType = bookType;
     }
+
     public String getBookIntroduce() {
         return bookIntroduce;
     }
@@ -83,6 +86,7 @@ public class Book implements Serializable {
     public void setBookIntroduce(String bookIntroduce) {
         this.bookIntroduce = bookIntroduce;
     }
+
     public String getAuthorIntroduce() {
         return authorIntroduce;
     }
@@ -90,6 +94,7 @@ public class Book implements Serializable {
     public void setAuthorIntroduce(String authorIntroduce) {
         this.authorIntroduce = authorIntroduce;
     }
+
     public String getAuthor() {
         return author;
     }
@@ -97,6 +102,7 @@ public class Book implements Serializable {
     public void setAuthor(String author) {
         this.author = author;
     }
+
     public String getPublish() {
         return publish;
     }
@@ -104,6 +110,7 @@ public class Book implements Serializable {
     public void setPublish(String publish) {
         this.publish = publish;
     }
+
     public String getOriginalName() {
         return originalName;
     }
@@ -111,6 +118,7 @@ public class Book implements Serializable {
     public void setOriginalName(String originalName) {
         this.originalName = originalName;
     }
+
     public String getTranslateMan() {
         return translateMan;
     }
@@ -118,6 +126,7 @@ public class Book implements Serializable {
     public void setTranslateMan(String translateMan) {
         this.translateMan = translateMan;
     }
+
     public String getPublishTime() {
         return publishTime;
     }
@@ -125,6 +134,7 @@ public class Book implements Serializable {
     public void setPublishTime(String publishTime) {
         this.publishTime = publishTime;
     }
+
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -132,6 +142,7 @@ public class Book implements Serializable {
     public void setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
     }
+
     public String getSeries() {
         return series;
     }
@@ -139,6 +150,7 @@ public class Book implements Serializable {
     public void setSeries(String series) {
         this.series = series;
     }
+
     public String getProducer() {
         return producer;
     }
@@ -146,6 +158,7 @@ public class Book implements Serializable {
     public void setProducer(String producer) {
         this.producer = producer;
     }
+
     public String getIsbn() {
         return isbn;
     }
@@ -153,6 +166,7 @@ public class Book implements Serializable {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
     public String getCoverImg() {
         return coverImg;
     }
@@ -160,6 +174,7 @@ public class Book implements Serializable {
     public void setCoverImg(String coverImg) {
         this.coverImg = coverImg;
     }
+
     public Double getScore() {
         return score;
     }
@@ -171,22 +186,22 @@ public class Book implements Serializable {
     @Override
     public String toString() {
         return "Book{" +
-            "bookId=" + bookId +
-            ", bookName=" + bookName +
-            ", bookType=" + bookType +
-            ", bookIntroduce=" + bookIntroduce +
-            ", authorIntroduce=" + authorIntroduce +
-            ", author=" + author +
-            ", publish=" + publish +
-            ", originalName=" + originalName +
-            ", translateMan=" + translateMan +
-            ", publishTime=" + publishTime +
-            ", pageNumber=" + pageNumber +
-            ", series=" + series +
-            ", producer=" + producer +
-            ", isbn=" + isbn +
-            ", coverImg=" + coverImg +
-            ", score=" + score +
-        "}";
+                "bookId=" + bookId +
+                ", bookName=" + bookName +
+                ", bookType=" + bookType +
+                ", bookIntroduce=" + bookIntroduce +
+                ", authorIntroduce=" + authorIntroduce +
+                ", author=" + author +
+                ", publish=" + publish +
+                ", originalName=" + originalName +
+                ", translateMan=" + translateMan +
+                ", publishTime=" + publishTime +
+                ", pageNumber=" + pageNumber +
+                ", series=" + series +
+                ", producer=" + producer +
+                ", isbn=" + isbn +
+                ", coverImg=" + coverImg +
+                ", score=" + score +
+                "}";
     }
 }

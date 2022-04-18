@@ -1,13 +1,15 @@
 package com.sys.recommend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author LuoRuiJie
@@ -28,7 +30,41 @@ public class Invitation implements Serializable {
 
     private String createTime;
 
-        private String invitationTitle;
+    private String invitationTitle;
+
+    @TableField(exist = false)
+    private String belongGroupName;
+
+    @TableField(exist = false)
+    private String createrName;
+
+    @TableField(exist = false)
+    private int replyNumber;
+
+
+    public String getCreaterName() {
+        return createrName;
+    }
+
+    public void setCreaterName(String createrName) {
+        this.createrName = createrName;
+    }
+
+    public int getReplyNumber() {
+        return replyNumber;
+    }
+
+    public void setReplyNumber(int replyNumber) {
+        this.replyNumber = replyNumber;
+    }
+
+    public String getBelongGroupName() {
+        return belongGroupName;
+    }
+
+    public void setBelongGroupName(String belongGroupName) {
+        this.belongGroupName = belongGroupName;
+    }
 
     public String getInvitationTitle() {
         return invitationTitle;
@@ -45,6 +81,7 @@ public class Invitation implements Serializable {
     public void setInvitationId(Integer invitationId) {
         this.invitationId = invitationId;
     }
+
     public Integer getGroupId() {
         return groupId;
     }
@@ -52,6 +89,7 @@ public class Invitation implements Serializable {
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
+
     public String getInvitationContent() {
         return invitationContent;
     }
@@ -59,6 +97,7 @@ public class Invitation implements Serializable {
     public void setInvitationContent(String invitationContent) {
         this.invitationContent = invitationContent;
     }
+
     public Integer getCreaterId() {
         return createrId;
     }
@@ -66,6 +105,7 @@ public class Invitation implements Serializable {
     public void setCreaterId(Integer createrId) {
         this.createrId = createrId;
     }
+
     public String getCreateTime() {
         return createTime;
     }
@@ -77,12 +117,12 @@ public class Invitation implements Serializable {
     @Override
     public String toString() {
         return "Invitation{" +
-            "invitationId=" + invitationId +
-            ", groupId=" + groupId +
-            ", invitationContent=" + invitationContent +
-            ", createrId=" + createrId +
-            ", createTime=" + createTime +
-            ", invitationTitle=" + invitationTitle +
-        "}";
+                "invitationId=" + invitationId +
+                ", groupId=" + groupId +
+                ", invitationContent=" + invitationContent +
+                ", createrId=" + createrId +
+                ", createTime=" + createTime +
+                ", invitationTitle=" + invitationTitle +
+                "}";
     }
 }

@@ -1,12 +1,14 @@
 package com.sys.recommend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author LuoRuiJie
@@ -33,6 +35,28 @@ public class Groupinfo implements Serializable {
 
     private String headImgName;
 
+    @TableField(exist = false)
+    private Integer personNumber;
+
+    @TableField(exist = false)
+    private String createrName;
+
+    public String getCreaterName() {
+        return createrName;
+    }
+
+    public void setCreaterName(String createrName) {
+        this.createrName = createrName;
+    }
+
+    public Integer getPersonNumber() {
+        return personNumber;
+    }
+
+    public void setPersonNumber(Integer personNumber) {
+        this.personNumber = personNumber;
+    }
+
     public String getGroupHead() {
         return groupHead;
     }
@@ -56,6 +80,7 @@ public class Groupinfo implements Serializable {
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
+
     public String getGroupName() {
         return groupName;
     }
@@ -63,6 +88,7 @@ public class Groupinfo implements Serializable {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
+
     public String getGroupIntroduction() {
         return groupIntroduction;
     }
@@ -70,6 +96,7 @@ public class Groupinfo implements Serializable {
     public void setGroupIntroduction(String groupIntroduction) {
         this.groupIntroduction = groupIntroduction;
     }
+
     public String getLabel() {
         return label;
     }
@@ -77,6 +104,7 @@ public class Groupinfo implements Serializable {
     public void setLabel(String labelId) {
         this.label = labelId;
     }
+
     public Integer getCreaterId() {
         return createrId;
     }
@@ -84,6 +112,7 @@ public class Groupinfo implements Serializable {
     public void setCreaterId(Integer createrId) {
         this.createrId = createrId;
     }
+
     public Integer getState() {
         return state;
     }
@@ -95,14 +124,14 @@ public class Groupinfo implements Serializable {
     @Override
     public String toString() {
         return "Group{" +
-            "groupId=" + groupId +
-            ", groupName=" + groupName +
-            ", groupIntroduction=" + groupIntroduction +
-            ", label=" + label +
-            ", createrId=" + createrId +
-            ", state=" + state +
-            ", groupHead=" + groupHead +
-            ", headImgName=" + headImgName +
-        "}";
+                "groupId=" + groupId +
+                ", groupName=" + groupName +
+                ", groupIntroduction=" + groupIntroduction +
+                ", label=" + label +
+                ", createrId=" + createrId +
+                ", state=" + state +
+                ", groupHead=" + groupHead +
+                ", headImgName=" + headImgName +
+                "}";
     }
 }

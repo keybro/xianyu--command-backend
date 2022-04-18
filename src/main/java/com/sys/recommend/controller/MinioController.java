@@ -1,10 +1,7 @@
 package com.sys.recommend.controller;
 
 import com.sys.recommend.service.MinioService;
-import com.sys.recommend.service.MinioService;
 import com.sys.recommend.tool.Resp;
-import com.sys.recommend.tool.Resp;
-import io.minio.BucketExistsArgs;
 import io.minio.MinioClient;
 import io.minio.ObjectWriteResponse;
 import io.minio.PutObjectArgs;
@@ -17,8 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -90,28 +85,80 @@ public class MinioController {
     }
 
 
-
     /**
+     * @return Resp
+     * 已测通
      * @Author LuoRuiJie
      * @Description 小组头像选取后上传到minio的recommend/group/文件名下
      * @Date
-     * @Param MultipartFile,String
-     * @return Resp
-     * 已测通
+     * @Param MultipartFile, String
      **/
     @PostMapping("/uploadFile")
-    public Resp putObjectToGroupHead(@RequestParam("file") MultipartFile file,@RequestParam("name") String objectName) throws IOException, ServerException, InsufficientDataException, InternalException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, XmlParserException, ErrorResponseException {
+    public Resp putObjectToGroupHead(@RequestParam("file") MultipartFile file, @RequestParam("name") String objectName) throws IOException, ServerException, InsufficientDataException, InternalException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, XmlParserException, ErrorResponseException {
         String objectLocation = "/group/";
-        String targetObjectName = objectLocation+objectName;
+        String targetObjectName = objectLocation + objectName;
         InputStream inputStream = file.getInputStream();
         String contentType = file.getContentType();
-        minioService.putObject("recommend",targetObjectName,inputStream,contentType);
+        minioService.putObject("recommend", targetObjectName, inputStream, contentType);
         return Resp.ok("上传成功");
     }
 
 
+    /**
+     * @return Resp
+     * 已测通
+     * @Author LuoRuiJie
+     * @Description 小组头像选取后上传到minio的recommend/group/文件名下
+     * @Date
+     * @Param MultipartFile, String
+     **/
+    @PostMapping("/uploadFileBook")
+    public Resp putObjectToBookHead(@RequestParam("file") MultipartFile file, @RequestParam("name") String objectName) throws IOException, ServerException, InsufficientDataException, InternalException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, XmlParserException, ErrorResponseException {
+        String objectLocation = "/book/";
+        String targetObjectName = objectLocation + objectName;
+        InputStream inputStream = file.getInputStream();
+        String contentType = file.getContentType();
+        minioService.putObject("recommend", targetObjectName, inputStream, contentType);
+        return Resp.ok("上传成功");
+    }
 
 
+    /**
+     * @return Resp
+     * 已测通
+     * @Author LuoRuiJie
+     * @Description 小组头像选取后上传到minio的recommend/movie/文件名下
+     * @Date
+     * @Param MultipartFile, String
+     **/
+    @PostMapping("/uploadFileMovie")
+    public Resp putObjectToMovieHead(@RequestParam("file") MultipartFile file, @RequestParam("name") String objectName) throws IOException, ServerException, InsufficientDataException, InternalException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, XmlParserException, ErrorResponseException {
+        String objectLocation = "/movie/";
+        String targetObjectName = objectLocation + objectName;
+        InputStream inputStream = file.getInputStream();
+        String contentType = file.getContentType();
+        minioService.putObject("recommend", targetObjectName, inputStream, contentType);
+        return Resp.ok("上传成功");
+    }
+
+
+    /**
+     * @return Resp
+     * 已测通
+     * @Author LuoRuiJie
+     * @Description 小组头像选取后上传到minio的recommend/music/文件名下
+     * @Date
+     * @Param MultipartFile, String
+     **/
+    @PostMapping("/uploadFileMusic")
+    public Resp putObjectToMusicHead(@RequestParam("file") MultipartFile file, @RequestParam("name") String objectName) throws IOException, ServerException, InsufficientDataException, InternalException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, XmlParserException, ErrorResponseException {
+        String objectLocation = "/music/";
+        String targetObjectName = objectLocation + objectName;
+        InputStream inputStream = file.getInputStream();
+        String contentType = file.getContentType();
+        minioService.putObject("recommend", targetObjectName, inputStream, contentType);
+        return Resp.ok("上传成功");
+    }
 
 
 }

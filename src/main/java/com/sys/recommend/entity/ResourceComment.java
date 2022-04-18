@@ -1,6 +1,7 @@
 package com.sys.recommend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
@@ -33,6 +34,17 @@ public class ResourceComment implements Serializable {
     private String commentContent;
 
     private Integer belongType;
+
+    @TableField(exist = false)
+    private String resourceName;
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
 
     public Integer getBelongType() {
         return belongType;
