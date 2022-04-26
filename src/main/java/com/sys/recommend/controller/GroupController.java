@@ -227,7 +227,10 @@ public class GroupController extends BaseController {
      **/
     @PostMapping("/removeThisGroup")
     public Resp removeThisGroup(@RequestBody Groupinfo groupinfo) {
+        int groupId = groupinfo.getGroupId();
         if (groupService.removeById(groupinfo.getGroupId())) {
+            QueryWrapper<Joins> joinsQueryWrapper = new QueryWrapper<Joins>().eq("group_id", groupId);
+            joinService.remove(joinsQueryWrapper);
             return Resp.ok("解散成功");
         }
         return Resp.err("解散失败");
