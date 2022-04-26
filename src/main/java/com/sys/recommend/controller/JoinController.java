@@ -107,4 +107,22 @@ public class JoinController extends BaseController {
     }
 
 
+
+
+    /**
+     * @Author LuoRuiJie
+     * @Description 判断当前小组当前用户是否已经加入过
+     * @Date
+     * @Param int
+     * @return Resp
+     **/
+    @GetMapping("/isHaveJoin/{id}")
+    public Resp isHaveJoin(@PathVariable int id){
+        int CurrentUserId = Integer.parseInt(getSenderId());
+        QueryWrapper<Joins> joinsQueryWrapper = new QueryWrapper<Joins>().eq("user_id", CurrentUserId).eq("group_id", id);
+        Joins joins = joinService.getOne(joinsQueryWrapper);
+        return Resp.ok(joins == null);
+    }
+
+
 }

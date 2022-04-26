@@ -12,6 +12,7 @@ import com.sys.recommend.service.MinioService;
 import com.sys.recommend.service.UserService;
 import com.sys.recommend.tool.Resp;
 import io.minio.errors.*;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -76,6 +77,11 @@ public class GroupController extends BaseController {
         groupinfo.setCreaterId(currentUserId);
         groupinfo.setState(1);
         if (groupService.save(groupinfo)) {
+            Groupinfo groupinfo1 = groupService.getById(groupinfo.getGroupId());
+            Joins joins = new Joins();
+            joins.setGroupId(groupinfo1.getGroupId());
+            joins.setUserId(currentUserId);
+            joinService.save(joins);
             return Resp.ok("创建成功");
         }
         return Resp.err("创建失败");
@@ -93,6 +99,13 @@ public class GroupController extends BaseController {
     public Resp getMainPageGroupList() {
         QueryWrapper<Groupinfo> groupinfoQueryWrapper = new QueryWrapper<Groupinfo>().last("limit 12");
         List<Groupinfo> groupinfoList = groupService.list(groupinfoQueryWrapper);
+        for (Groupinfo groupInfo :
+                groupinfoList) {
+            QueryWrapper<Joins> joinsQueryWrapper = new QueryWrapper<Joins>().eq("group_id", groupInfo.getGroupId());
+            int count = joinService.count(joinsQueryWrapper);
+            groupInfo.setPersonNumber(count);
+
+        }
         return Resp.ok(groupinfoList);
     }
 
@@ -149,10 +162,24 @@ public class GroupController extends BaseController {
         String groupType = params.get("label");
         if (groupType.equals("全部")) {
             Page<Groupinfo> groupinfoPagePage = groupService.page(new Page<>(page, limit));
+            List<Groupinfo> records = groupinfoPagePage.getRecords();
+            for (Groupinfo GroupInfo :
+                    records) {
+                QueryWrapper<Joins> joinsQueryWrapper = new QueryWrapper<Joins>().eq("group_id", GroupInfo.getGroupId());
+                int count = joinService.count(joinsQueryWrapper);
+                GroupInfo.setPersonNumber(count);
+            }
             return Resp.ok(groupinfoPagePage);
         }
         QueryWrapper<Groupinfo> movieQueryWrapper = new QueryWrapper<Groupinfo>().like("label", groupType);
         Page<Groupinfo> moviePage = groupService.page(new Page<>(page, limit), movieQueryWrapper);
+        List<Groupinfo> records = moviePage.getRecords();
+        for (Groupinfo GroupInfo :
+                records) {
+            QueryWrapper<Joins> joinsQueryWrapper = new QueryWrapper<Joins>().eq("group_id", GroupInfo.getGroupId());
+            int count = joinService.count(joinsQueryWrapper);
+            GroupInfo.setPersonNumber(count);
+        }
         return Resp.ok(moviePage);
     }
 
@@ -247,6 +274,23 @@ public class GroupController extends BaseController {
             return Resp.ok("删除成功");
         }
         return Resp.err("删除失败");
+    }
+
+
+    /**
+     * @Author LuoRuiJie
+     * @Description 判断当前用户是否创建过小组
+     * @Date
+     * @Param null
+     * @return Resp
+     **/
+    @GetMapping("/isCreater")
+    public Resp isCreater(){
+        int CurrentUserId = Integer.parseInt(getSenderId());
+        System.out.println(CurrentUserId);
+        QueryWrapper<Groupinfo> groupinfoQueryWrapper = new QueryWrapper<Groupinfo>().eq("creater_id", CurrentUserId).last("limit 1");
+        Groupinfo groupinfo = groupService.getOne(groupinfoQueryWrapper);
+        return Resp.ok(groupinfo == null);
     }
 
 
